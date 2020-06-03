@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">PaytabsAssignment</string>
+    <string name="checkout">Checkout</string>
+    <string name="TRANSACTION_TITLE">Transaction Title</string>
+    <string name="AMOUNT">Amount</string>
+    <string name="CURRENCY_CODE">Currency Code</string>
+    <string name="CUSTOMER_PHONE_NUMBER">Customer Phone Number</string>
+    <string name="CUSTOMER_EMAIL">Customer Email</string>
+    <string name="ORDER_ID">Order Id</string>
+    <string name="PRODUCT_NAME">Product Name</string>
+    <string name="ADDRESS_BILLING">Address Billing</string>
+    <string name="CITY_BILLING">City Billing</string>
+    <string name="STATE_BILLING">State Billing</string>
+    <string name="COUNTRY_BILLING">Country Billing</string>
+    <string name="POSTAL_CODE_BILLING">Postal Code Billing</string>
+    <string name="ADDRESS_SHIPPING">Address Shipping</string>
+    <string name="CITY_SHIPPING">City Shipping</string>
+    <string name="STATE_SHIPPING">State Shipping</string>
+    <string name="COUNTRY_SHIPPING">Country Shipping</string>
+    <string name="POSTAL_CODE_SHIPPING">Postal Code Shipping</string>
+    <string name="IS_TOKENIZATION">Is Tokenization</string>
+    <string name="TRANSACTION_TITLE_required_msg">Please enter Transaction Title</string>
+    <string name="AMOUNT_required_msg">Amount must be greater than 0</string>
+    <string name="CURRENCY_CODE_required_msg">Please enter Currency Code</string>
+    <string name="CUSTOMER_PHONE_NUMBER_required_msg">Please enter Customer Phone Number</string>
+    <string name="CUSTOMER_EMAIL_required_msg">"Please enter Customer Email "</string>
+    <string name="ORDER_ID_required_msg">Please enter Order ID</string>
+    <string name="PRODUCT_NAME_required_msg">Please enter Product Name</string>
+    <string name="ADDRESS_BILLING_required_msg">Please enter Address Billing</string>
+    <string name="CITY_BILLING_required_msg">Please enter City Billing</string>
+    <string name="STATE_BILLING_required_msg">Please enter State Billing</string>
+    <string name="COUNTRY_BILLING_required_msg">Please enter Country Billing</string>
+    <string name="POSTAL_CODE_BILLING_required_msg">Please  enter Postal Code Billing</string>
+    <string name="ADDRESS_SHIPPING_required_msg">Please enter Address Shipping</string>
+    <string name="CITY_SHIPPING_required_msg">Please enter City Shipping</string>
+    <string name="STATE_SHIPPING_required_msg">Please enter State Shipping</string>
+    <string name="COUNTRY_SHIPPING_required_msg">Please enter Country Shipping</string>
+    <string name="POSTAL_CODE_SHIPPING_required_msg">Please enter Postal Code Shipping</string>
+    <string name="please_enter_valid_data">Please enter valid data</string>
+    <string name="MERCHANT_EMAIL">Merchant Email</string>
+    <string name="SECRET_KEY">Security Key</string>
+    <string name="LANGUAGE">Language</string>
+    <string name="MERCHANT_EMAIL_required_msg">Please enter Merchant Email</string>
+    <string name="SECRET_KEY_required_msg">Please enter Security Key</string>
+    <string name="LANGUAGE_required_msg">Please enter language</string>
+    <string name="RESPONSE_CODE">Response Code</string>
+    <string name="TRANSACTION_ID">Transaction ID</string>
+    <string name="RESULT_MESSAGE">Result Message</string>
+    <string name="noDataFound">No Data Found</string>
+
+
+    <string name="SocketTimeoutException">@string/noInternetConnection</string>
+    <string name="UnknownHostException">@string/noInternetConnection</string>
+    <string name="IOException">@string/noInternetConnection</string>
+    <string name="noInternetConnection">No Internet Connection</string>
+    <string name="anErrorOccured">An Error Occured</string>
+    <string name="tokenizationIntegration">Tokenization</string>
+    <string name="tokenNotFound">Token not found, Please authorize your card first</string>
+    <string name="PreAuth">Pre Auth</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="CAPTURED_AMOUNT">Captured Amount</string>
+    <string name="void_transaction">Void Transaction</string>
+    <string name="submit">Submit</string>
+    <string name="TRANSACTION_ID_required_msg">Please enter Transaction ID</string>
+</resources>

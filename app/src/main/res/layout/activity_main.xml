@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.hamdy.paytabsassignment.features.payment_parameters.PaymentParamModel" />
+
+    </data>
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".features.payment_parameters.MainActivity">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+
+                <!--MERCHANT_EMAIL-->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/TextInputStyle">
+
+                    <EditText
+                        android:id="@+id/MERCHANT_EMAIL"
+                        style="@style/EditTextEmailStyle"
+                        android:hint="@string/MERCHANT_EMAIL"
+                        android:text="@={model.MERCHANT_EMAIL}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--SECRET_KEY-->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/TextInputStyle">
+
+                    <EditText
+                        android:id="@+id/SECRET_KEY"
+                        style="@style/formFieldStyle"
+                        android:hint="@string/SECRET_KEY"
+                        android:text="@={model.SECRET_KEY}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--LANGUAGE-->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/TextInputStyle">
+
+                    <EditText
+                        android:id="@+id/LANGUAGE"
+                        style="@style/formFieldStyle"
+                        android:hint="@string/LANGUAGE"
+                        android:text="@={model.LANGUAGE}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--TRANSACTION_TITLE-->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/TextInputStyle">
+
+                    <EditText
+                        android:id="@+id/TRANSACTION_TITLE"
+                        style="@style/formFieldStyle"
+                        android:hint="@string/TRANSACTION_TITLE"
+                        android:text="@={model.TRANSACTION_TITLE}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <!--AMOUNT-->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/TextInputStyle">
+
+                    <EditText
+                        android:id="@+id/AMOUNT"
+                        style="@style/EditTextDecimalStyle"
+                        android:hint="@string/AMOUNT"
+                        android:text="@={model.AMOUNT}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--CURRENCY_CODE-->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/TextInputStyle">
+
+                    <EditText
+                        android:id="@+id/CURRENCY_CODE"
+                        style="@style/formFieldStyle"
+                        android:hint="@string/CURRENCY_CODE"
+                        android:text="@={model.CURRENCY_CODE}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--CUSTOMER_PHONE_NUMBER-->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/TextInputStyle">
+
+                    <EditText
+                        android:id="@+id/CUSTOMER_PHONE_NUMBER"
+                        style="@style/EditTextPhoneStyle"
+                        android:hint="@string/CUSTOMER_PHONE_NUMBER"
+                        android:text="@={model.CUSTOMER_PHONE_NUMBER}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--CUSTOMER_EMAIL-->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/TextInputStyle">
+
+                    <EditText
+                        android:id="@+id/CUSTOMER_EMAIL"
+                        style="@style/EditTextEmailStyle"
+                        android:hint="@string/CUSTOMER_EMAIL"
+                        android:text="@={model.CUSTOMER_EMAIL}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--ORDER_ID-->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/TextInputStyle">
+
+                    <EditText
+                        android:id="@+id/ORDER_ID"
+                        style="@style/formFieldStyle"
+                        android:hint="@string/ORDER_ID"
+                        android:text="@={model.ORDER_ID}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--PRODUCT_NAME-->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/TextInputStyle">
+
+                    <EditText
+                        android:id="@+id/PRODUCT_NAME"
+                        style="@style/formFieldStyle"
+                        android:hint="@string/PRODUCT_NAME"
+                        android:text="@={model.PRODUCT_NAME}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <!--ADDRESS_BILLING-->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/TextInputStyle">
+
+                    <EditText
+                        android:id="@+id/ADDRESS_BILLING"
+                        style="@style/formFieldStyle"
+                        android:hint="@string/ADDRESS_BILLING"
+                        android:text="@={model.ADDRESS_BILLING}" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--CITY_BILLING-->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/TextInputStyle">
+
+                    <EditText
+                        android:id="@+id/CITY_BILLING"
+                        style="@style/formFieldStyle"
+                        android:hint="@string/CITY_BILLING"
+                        android:text="@={model.CITY_BILLING}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--STATE_BILLING-->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/TextInputStyle">
+
+                    <EditText
+                        android:id="@+id/STATE_BILLING"
+                        style="@style/formFieldStyle"
+                        android:hint="@string/STATE_BILLING"
+                        android:text="@={model.STATE_BILLING}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--COUNTRY_BILLING-->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/TextInputStyle">
+
+                    <EditText
+                        android:id="@+id/COUNTRY_BILLING"
+                        style="@style/formFieldStyle"
+                        android:hint="@string/COUNTRY_BILLING"
+                        android:text="@={model.COUNTRY_BILLING}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--POSTAL_CODE_BILLING-->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/TextInputStyle">
+
+                    <EditText
+                        android:id="@+id/POSTAL_CODE_BILLING"
+                        style="@style/EditTextNumberStyle"
+                        android:hint="@string/POSTAL_CODE_BILLING"
+                        android:text="@={model.POSTAL_CODE_BILLING}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--ADDRESS_SHIPPING-->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/TextInputStyle">
+
+                    <EditText
+                        android:id="@+id/ADDRESS_SHIPPING"
+                        style="@style/formFieldStyle"
+                        android:hint="@string/ADDRESS_SHIPPING"
+                        android:text="@={model.ADDRESS_SHIPPING}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--CITY_SHIPPING-->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/TextInputStyle">
+
+                    <EditText
+                        android:id="@+id/CITY_SHIPPING"
+                        style="@style/formFieldStyle"
+                        android:hint="@string/CITY_SHIPPING"
+                        android:text="@={model.CITY_SHIPPING}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--STATE_SHIPPING-->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/TextInputStyle">
+
+                    <EditText
+                        android:id="@+id/STATE_SHIPPING"
+                        style="@style/formFieldStyle"
+                        android:hint="@string/STATE_SHIPPING"
+                        android:text="@={model.STATE_SHIPPING}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--COUNTRY_SHIPPING-->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/TextInputStyle">
+
+                    <EditText
+                        android:id="@+id/COUNTRY_SHIPPING"
+                        style="@style/formFieldStyle"
+                        android:hint="@string/COUNTRY_SHIPPING"
+                        android:text="@={model.COUNTRY_SHIPPING}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--POSTAL_CODE_SHIPPING-->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/TextInputStyle">
+
+                    <EditText
+                        android:id="@+id/POSTAL_CODE_SHIPPING"
+                        style="@style/EditTextNumberStyle"
+                        android:hint="@string/POSTAL_CODE_SHIPPING"
+                        android:text="@={model.POSTAL_CODE_SHIPPING}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <!--IS_TOKENIZATION-->
+                <CheckBox
+                    android:id="@+id/IS_TOKENIZATION"
+                    style="@style/TextInputStyle"
+                    android:text="@string/IS_TOKENIZATION" />
+
+
+                <Button
+                    android:id="@+id/checkoutBtn"
+                    style="@style/formFieldStyle"
+                    android:gravity="center"
+                    android:text="@string/checkout"
+                    android:textAlignment="center" />
+
+                <Button
+                    android:id="@+id/tokenizationIntegrateBtn"
+                    style="@style/formFieldStyle"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/tokenizationIntegration"
+                    android:textAlignment="center" />
+
+                <Button
+                    android:id="@+id/preAuthBtn"
+                    style="@style/formFieldStyle"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/PreAuth"
+                    android:textAlignment="center" />
+
+            </LinearLayout>
+
+
+        </ScrollView>
+    </FrameLayout>
+
+
+</layout>

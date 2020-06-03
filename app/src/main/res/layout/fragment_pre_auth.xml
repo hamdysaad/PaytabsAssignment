@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.hamdy.paytabsassignment.features.payment_parameters.pre_auth.PreAuthModel" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:clickable="true"
+        tools:context=".features.payment_parameters.MainActivity"
+        android:focusable="true">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+
+            <!--MERCHANT_EMAIL-->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/TextInputStyle">
+
+                <EditText
+                    android:id="@+id/MERCHANT_EMAIL"
+                    style="@style/EditTextEmailStyle"
+                    android:hint="@string/MERCHANT_EMAIL"
+                    android:text="@={model.MERCHANT_EMAIL}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--SECRET_KEY-->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/TextInputStyle">
+
+                <EditText
+                    android:id="@+id/SECRET_KEY"
+                    style="@style/formFieldStyle"
+                    android:hint="@string/SECRET_KEY"
+                    android:text="@={model.SECRET_KEY}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--TRANSACTION_ID-->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/TextInputStyle">
+
+                <EditText
+                    android:id="@+id/TRANSACTION_ID"
+                    style="@style/formFieldStyle"
+                    android:hint="@string/TRANSACTION_ID"
+                    android:text="@={model.TRANSACTION_ID}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <!--capture_amount-->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/TextInputStyle">
+
+                <EditText
+                    android:id="@+id/CAPTURED_AMOUNT"
+                    style="@style/EditTextDecimalStyle"
+                    android:hint="@string/CAPTURED_AMOUNT"
+                    android:text="@={model.CAPTURED_AMOUNT}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--void_transaction-->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/TextInputStyle">
+
+                <EditText
+                    android:id="@+id/void_transaction"
+                    style="@style/EditTextDecimalStyle"
+                    android:hint="@string/void_transaction"
+                    android:text="@={model.VOID_TRANSACTION}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/submitBtn"
+                style="@style/formFieldStyle"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:text="@string/submit"
+                android:textAlignment="center" />
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+</layout>
