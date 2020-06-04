@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".features.payment_result.PaymentResultActivity"></activity>
-        <activity android:name=".features.payment_parameters.MainActivity">
+        <activity android:name=".features.payment_checkout.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -63,4 +63,12 @@
     <string name="void_transaction">Void Transaction</string>
     <string name="submit">Submit</string>
     <string name="TRANSACTION_ID_required_msg">Please enter Transaction ID</string>
+    <string name="TOKEN">Token</string>
+    <string name="CUSTOMER_PASSWORD">Customer Password</string>
+    <string name="FIRST_NAME">First Name</string>
+    <string name="LAST_NAME">Last Name</string>
+    <string name="TOKEN_required_msg">Please enter  Token</string>
+    <string name="CUSTOMER_PASSWORD_required_msg">Please enter Customer Password</string>
+    <string name="FIRST_NAME_required_msg">Please enter First Name</string>
+    <string name="LAST_NAME_required_msg">Please enter Last Name</string>
 </resources>

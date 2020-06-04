@@ -1,7 +1,7 @@
 package com.hamdy.paytabsassignment.koin
 
-import com.hamdy.paytabsassignment.features.payment_parameters.pre_auth.PreAuthRepo
-import com.hamdy.paytabsassignment.features.payment_parameters.tokenization.TokenizationRepo
+import com.hamdy.paytabsassignment.features.payment_checkout.pre_auth.PreAuthRepo
+import com.hamdy.paytabsassignment.features.payment_checkout.tokenization.TokenizationRepo
 import org.koin.dsl.module
 
 

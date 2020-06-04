@@ -6,7 +6,7 @@
 
         <variable
             name="model"
-            type="com.hamdy.paytabsassignment.features.payment_checkout.pre_auth.PreAuthModel" />
+            type="com.hamdy.paytabsassignment.features.payment_checkout.tokenization.TokenizationModel" />
 
     </data>
 
@@ -27,61 +27,62 @@
             android:padding="20dp">
 
 
-            <!--MERCHANT_EMAIL-->
+            <!--TOKEN-->
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/TextInputStyle">
 
                 <EditText
-                    android:id="@+id/MERCHANT_EMAIL"
+                    android:id="@+id/TOKEN"
+                    style="@style/formFieldStyle"
+                    android:hint="@string/TOKEN"
+                    android:text="@={model.TOKEN}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--CUSTOMER_EMAIL-->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/TextInputStyle">
+
+                <EditText
+                    android:id="@+id/CUSTOMER_EMAIL"
                     style="@style/EditTextEmailStyle"
-                    android:hint="@string/MERCHANT_EMAIL"
-                    android:text="@={model.MERCHANT_EMAIL}" />
+                    android:hint="@string/CUSTOMER_EMAIL"
+                    android:text="@={model.CUSTOMER_EMAIL}" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!--SECRET_KEY-->
+            <!--CUSTOMER_PASSWORD-->
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/TextInputStyle">
 
                 <EditText
-                    android:id="@+id/SECRET_KEY"
+                    android:id="@+id/CUSTOMER_PASSWORD"
                     style="@style/formFieldStyle"
-                    android:hint="@string/SECRET_KEY"
-                    android:text="@={model.SECRET_KEY}" />
+                    android:hint="@string/CUSTOMER_PASSWORD"
+                    android:text="@={model.CUSTOMER_PASSWORD}" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!--TRANSACTION_ID-->
+
+            <!--FIRST_NAME-->
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/TextInputStyle">
 
                 <EditText
-                    android:id="@+id/TRANSACTION_ID"
+                    android:id="@+id/FIRST_NAME"
                     style="@style/formFieldStyle"
-                    android:hint="@string/TRANSACTION_ID"
-                    android:text="@={model.TRANSACTION_ID}" />
+                    android:hint="@string/FIRST_NAME"
+                    android:text="@={model.FIRST_NAME}" />
             </com.google.android.material.textfield.TextInputLayout>
 
-
-            <!--capture_amount-->
+            <!--LAST_NAME-->
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/TextInputStyle">
 
                 <EditText
-                    android:id="@+id/CAPTURED_AMOUNT"
-                    style="@style/EditTextDecimalStyle"
-                    android:hint="@string/CAPTURED_AMOUNT"
-                    android:text="@={model.CAPTURED_AMOUNT}" />
+                    android:id="@+id/LAST_NAME"
+                    style="@style/formFieldStyle"
+                    android:hint="@string/LAST_NAME"
+                    android:text="@={model.LAST_NAME}" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!--void_transaction-->
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/TextInputStyle">
-
-                <EditText
-                    android:id="@+id/void_transaction"
-                    style="@style/EditTextDecimalStyle"
-                    android:hint="@string/void_transaction"
-                    android:text="@={model.VOID_TRANSACTION}" />
-            </com.google.android.material.textfield.TextInputLayout>
 
 
             <Button

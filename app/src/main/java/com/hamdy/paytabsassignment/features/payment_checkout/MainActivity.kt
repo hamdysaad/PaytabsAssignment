@@ -1,4 +1,4 @@
-package com.hamdy.paytabsassignment.features.payment_parameters
+package com.hamdy.paytabsassignment.features.payment_checkout
 
 import android.app.Activity
 import android.content.Intent
@@ -11,14 +11,13 @@ import com.hamdy.paytabsassignment.base.BaseActivity
 import com.hamdy.paytabsassignment.data.source.remote.Resource
 import com.hamdy.paytabsassignment.data.source.remote.Status
 import com.hamdy.paytabsassignment.databinding.ActivityMainBinding
-import com.hamdy.paytabsassignment.features.payment_parameters.pre_auth.PreAuthFragment
-import com.hamdy.paytabsassignment.features.payment_parameters.tokenization.TokenizeTransactionRes
+import com.hamdy.paytabsassignment.features.payment_checkout.pre_auth.PreAuthFragment
+import com.hamdy.paytabsassignment.features.payment_checkout.tokenization.TokenizationFragment
+import com.hamdy.paytabsassignment.features.payment_checkout.tokenization.TokenizeTransactionRes
 import com.hamdy.paytabsassignment.features.payment_result.PaymentResultActivity
 import com.hamdy.paytabsassignment.form_validation.FormValidationError
-import com.paytabs.paytabs_sdk.payment.ui.activities.PayTabActivity
 import com.paytabs.paytabs_sdk.utils.PaymentParams
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import java.lang.Error
 import java.util.ArrayList
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
@@ -54,10 +53,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             openCheckoutActivity(it)
         })
 
-        vm.TokenizedTransaction.observe(this , Observer {
-           TokenizeTransactionResonse(it)
-        })
-
 
         //init Is Tokenization Checkbox
         binding.ISTOKENIZATION.let {
@@ -76,35 +71,13 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         )
     }
 
-    private fun TokenizeTransactionResonse(it: Resource<TokenizeTransactionRes?>?) {
-
-        hideDialogLoading()
-
-        when(it?.status){
-
-            Status.LOADING -> showDialogLoading()
-
-            Status.ERROR -> showErrorMsgDialog(it.message ?: getString(R.string.anErrorOccured))
-
-            Status.SUCCESS -> {
-                PaymentResultActivity.openPaymentResultActivity(this , Intent().apply {
-                    putExtra(PaymentParams.TRANSACTION_ID , it.data?.transaction_id)
-                    putExtra(PaymentParams.RESULT_MESSAGE , it.data?.result)
-                    putExtra(PaymentParams.RESPONSE_CODE , it.data?.response_code)
-
-                })
-            }
-        }
-    }
 
     private fun onIntegrateWithTokenizationClick() {
-
-        if(!vm.isTokenFound()){
-            showErrorMsgDialog(getString(R.string.tokenNotFound))
-            return
-        }
-
-        vm.integrateWithTokenization()
+        addFragment(
+            TokenizationFragment.newInstance(),
+            R.id.container,
+            true
+        )
 
     }
 

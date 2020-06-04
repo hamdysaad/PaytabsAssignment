@@ -1,6 +1,5 @@
-package com.hamdy.paytabsassignment.features.payment_parameters.tokenization
+package com.hamdy.paytabsassignment.features.payment_checkout.tokenization
 
-import com.hamdy.paytabsassignment.data.source.remote.BaseResponseModel
 import com.hamdy.paytabsassignment.network.AppBaseResponse
 
 class TokenizeTransactionRes : AppBaseResponse() {

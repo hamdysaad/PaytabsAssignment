@@ -1,15 +1,13 @@
-package com.hamdy.paytabsassignment.features.payment_parameters
+package com.hamdy.paytabsassignment.features.payment_checkout
 
 import android.content.Context
 import android.content.Intent
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations
 import com.hamdy.paytabsassignment.R
 import com.hamdy.paytabsassignment.base.BaseVM
-import com.hamdy.paytabsassignment.features.payment_parameters.tokenization.TokenizationModel
-import com.hamdy.paytabsassignment.features.payment_parameters.tokenization.TokenizationPref
-import com.hamdy.paytabsassignment.features.payment_parameters.tokenization.TokenizationRepo
-import com.hamdy.paytabsassignment.features.payment_parameters.tokenization.TokenizedTranactionRequest
+import com.hamdy.paytabsassignment.features.payment_checkout.tokenization.TokenizationModel
+import com.hamdy.paytabsassignment.features.payment_checkout.tokenization.TokenizationPref
+import com.hamdy.paytabsassignment.features.payment_checkout.tokenization.TokenizationRepo
 import com.hamdy.paytabsassignment.form_validation.*
 import com.paytabs.paytabs_sdk.payment.ui.activities.PayTabActivity
 import com.paytabs.paytabs_sdk.utils.PaymentParams
@@ -33,12 +31,6 @@ class MainVM(val tokenizationPref : TokenizationPref ,val tokenizationRepo: Toke
     val formValiResult =  MutableLiveData<FormValiationResult?>()
     val openCheckout =  MutableLiveData<Intent?>()
 
-
-    val tokenizationDataLD = MutableLiveData<TokenizedTranactionRequest>()
-
-    val TokenizedTransaction = Transformations.switchMap(tokenizationDataLD){
-        tokenizationRepo.tokenizeTransaction(it)
-    }
 
     fun validateForm(context: Context?) {
 
@@ -238,37 +230,15 @@ class MainVM(val tokenizationPref : TokenizationPref ,val tokenizationRepo: Toke
     fun saveTokenDetails(token: String?, customerEmail: String?, customerPassword: String?) {
 
         tokenizationPref.saveTokenization(
-            TokenizationModel(
-                token,
-                customerEmail,
-                customerPassword
-            )
-        )
-    }
-
-    fun integrateWithTokenization() {
-        tokenizationPref.getTokenization()?.let {
-            if(!it.TOKEN.isNullOrEmpty()){
-                tokenizationDataLD.value = TokenizedTranactionRequest(
-                    it.TOKEN ,
-                    it.CUSTOMER_EMAIL,
-                    it.CUSTOMER_PASSWORD,
-                    "Hamdy",
-                    "Saad",
-                    model
-                )
+            TokenizationModel().apply {
+                TOKEN = token
+                CUSTOMER_EMAIL = customerEmail
+                CUSTOMER_PASSWORD = customerPassword
             }
-
-
-        }
+        )
     }
 
     fun isTokenFound(): Boolean {
         return !tokenizationPref.getTokenization().TOKEN.isNullOrEmpty()
     }
-
-
-    //1WVEfvrTEaKELLqXiKPHtS2PfPRFpJfq
-    //dst7Mea57yTv2CS3t78XoYV3SSCyx2PK
-    //1bHwZahLIaXkocn9sWT8NuvUbIu8H2SJ
 }

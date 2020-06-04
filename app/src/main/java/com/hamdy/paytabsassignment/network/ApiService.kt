@@ -2,8 +2,8 @@ package com.hamdy.paytabsassignment.network
 
 import androidx.lifecycle.LiveData
 import com.hamdy.paytabsassignment.data.source.remote.ApiResponse
-import com.hamdy.paytabsassignment.features.payment_parameters.pre_auth.PreAuthRes
-import com.hamdy.paytabsassignment.features.payment_parameters.tokenization.TokenizeTransactionRes
+import com.hamdy.paytabsassignment.features.payment_checkout.pre_auth.PreAuthRes
+import com.hamdy.paytabsassignment.features.payment_checkout.tokenization.TokenizeTransactionRes
 import retrofit2.http.Body
 import retrofit2.http.POST
 import java.util.HashMap

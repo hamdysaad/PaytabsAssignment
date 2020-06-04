@@ -1,6 +1,5 @@
-package com.hamdy.paytabsassignment.features.payment_parameters
+package com.hamdy.paytabsassignment.features.payment_checkout
 
-import com.hamdy.paytabsassignment.features.payment_parameters.PaymentParamModel
 import com.hamdy.paytabsassignment.form_validation.FormValidationError
 
 class FormValiationResult(

@@ -1,4 +1,4 @@
-package com.hamdy.paytabsassignment.features.payment_parameters.pre_auth
+package com.hamdy.paytabsassignment.features.payment_checkout.pre_auth
 
 class PreAuthModel {
 

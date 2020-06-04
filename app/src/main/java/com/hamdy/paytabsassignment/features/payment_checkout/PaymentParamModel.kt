@@ -1,4 +1,4 @@
-package com.hamdy.paytabsassignment.features.payment_parameters
+package com.hamdy.paytabsassignment.features.payment_checkout
 
 class PaymentParamModel {
 

@@ -1,12 +1,10 @@
-package com.hamdy.paytabsassignment.features.payment_parameters.pre_auth
+package com.hamdy.paytabsassignment.features.payment_checkout.pre_auth
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import com.hamdy.paytabsassignment.R
 import com.hamdy.paytabsassignment.base.BaseVM
-import com.hamdy.paytabsassignment.features.payment_parameters.FormValiationResult
-import com.hamdy.paytabsassignment.features.payment_parameters.tokenization.TokenizationPref
-import com.hamdy.paytabsassignment.features.payment_parameters.tokenization.TokenizationRepo
+import com.hamdy.paytabsassignment.features.payment_checkout.FormValiationResult
 import com.hamdy.paytabsassignment.form_validation.*
 
 class PreAuthVM( val repo: PreAuthRepo) : BaseVM() {

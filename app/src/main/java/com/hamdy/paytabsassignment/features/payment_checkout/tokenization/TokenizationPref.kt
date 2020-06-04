@@ -1,8 +1,7 @@
-package com.hamdy.paytabsassignment.features.payment_parameters.tokenization
+package com.hamdy.paytabsassignment.features.payment_checkout.tokenization
 
 import android.content.Context
 import com.hamdy.paytabsassignment.base.BasePreferenceStorage
-import com.hamdy.paytabsassignment.features.payment_parameters.tokenization.TokenizationModel
 
 class TokenizationPref( context: Context?) : BasePreferenceStorage(context) {
 
@@ -20,10 +19,10 @@ class TokenizationPref( context: Context?) : BasePreferenceStorage(context) {
 
     fun getTokenization(): TokenizationModel {
 
-        return TokenizationModel(
-            getString(TOKEN_PREF, null),
-            getString(CUSTOMER_EMAIL_PREF, null),
-            getString(CUSTOMER_PASSWORD_PREF, null)
-        )
+        return TokenizationModel().apply {
+            TOKEN = getString(TOKEN_PREF, null)
+            CUSTOMER_EMAIL =  getString(CUSTOMER_EMAIL_PREF, null)
+            CUSTOMER_PASSWORD = getString(CUSTOMER_PASSWORD_PREF, null)
+        }
     }
 }

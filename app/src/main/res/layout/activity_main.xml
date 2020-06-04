@@ -6,7 +6,7 @@
 
         <variable
             name="model"
-            type="com.hamdy.paytabsassignment.features.payment_parameters.PaymentParamModel" />
+            type="com.hamdy.paytabsassignment.features.payment_checkout.PaymentParamModel" />
 
     </data>
 
@@ -17,7 +17,7 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".features.payment_parameters.MainActivity">
+            tools:context=".features.payment_checkout.MainActivity">
 
 
             <LinearLayout
