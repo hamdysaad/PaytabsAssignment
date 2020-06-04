@@ -7,24 +7,22 @@ import com.hamdy.paytabsassignment.base.BaseVM
 import com.hamdy.paytabsassignment.features.payment_checkout.FormValiationResult
 import com.hamdy.paytabsassignment.form_validation.*
 
-class PreAuthVM( val repo: PreAuthRepo) : BaseVM() {
+class PreAuthVM( val repo: PreAuthRepo , val transactionPref: TransactionPref) : BaseVM() {
 
     val SECRET_KEY = "wLQbzomIvihkC9xN16Pc7aj75DmFHAQemGpW4MEA4WUG5su6zjiGtBOzfbeXM4b9KA5PmJqrGl8MOCSnVb4pNTY34d0Rhc02M5S9"
     val MERCHANT_EMAIL = "hamdysaad506@gmail.com"
 
-    val model = PreAuthModel()
-        .apply {
+    val model = PreAuthModel().apply {
 
         MERCHANT_EMAIL = this@PreAuthVM.MERCHANT_EMAIL
         SECRET_KEY = this@PreAuthVM.SECRET_KEY
-
 
         fillDummyData(this)
     }
 
     private fun fillDummyData(preAuthModel: PreAuthModel) {
         preAuthModel.CAPTURED_AMOUNT = "3.0"
-        preAuthModel.TRANSACTION_ID = "483552"
+        preAuthModel.TRANSACTION_ID = transactionPref.getTransactionId()
     }
 
     val formValiResult =  MutableLiveData<FormValiationResult?>()

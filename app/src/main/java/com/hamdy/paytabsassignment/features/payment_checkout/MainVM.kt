@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.lifecycle.MutableLiveData
 import com.hamdy.paytabsassignment.R
 import com.hamdy.paytabsassignment.base.BaseVM
+import com.hamdy.paytabsassignment.features.payment_checkout.pre_auth.TransactionPref
 import com.hamdy.paytabsassignment.features.payment_checkout.tokenization.TokenizationModel
 import com.hamdy.paytabsassignment.features.payment_checkout.tokenization.TokenizationPref
 import com.hamdy.paytabsassignment.features.payment_checkout.tokenization.TokenizationRepo
@@ -12,7 +13,9 @@ import com.hamdy.paytabsassignment.form_validation.*
 import com.paytabs.paytabs_sdk.payment.ui.activities.PayTabActivity
 import com.paytabs.paytabs_sdk.utils.PaymentParams
 
-class MainVM(val tokenizationPref : TokenizationPref ,val tokenizationRepo: TokenizationRepo) : BaseVM() {
+class MainVM(
+    val tokenizationPref : TokenizationPref ,
+    val transactionPref: TransactionPref) : BaseVM() {
 
     val SECRET_KEY = "wLQbzomIvihkC9xN16Pc7aj75DmFHAQemGpW4MEA4WUG5su6zjiGtBOzfbeXM4b9KA5PmJqrGl8MOCSnVb4pNTY34d0Rhc02M5S9"
     val MERCHANT_EMAIL = "hamdysaad506@gmail.com"
@@ -193,11 +196,11 @@ class MainVM(val tokenizationPref : TokenizationPref ,val tokenizationRepo: Toke
              //Tokenization
             putExtra(PaymentParams.IS_TOKENIZATION,  model.IS_TOKENIZATION)
 
+            //Preauth
             putExtra(PaymentParams.IS_PREAUTH,  1)
 
         }
     }
-
 
     private fun fillDummyData(paymentParamModel: PaymentParamModel) {
        paymentParamModel.AMOUNT                 =  "5.0"
@@ -238,7 +241,7 @@ class MainVM(val tokenizationPref : TokenizationPref ,val tokenizationRepo: Toke
         )
     }
 
-    fun isTokenFound(): Boolean {
-        return !tokenizationPref.getTokenization().TOKEN.isNullOrEmpty()
+    fun saveTransactionId(transactionId: String?) {
+        transactionPref.saveTransactionId(transactionId)
     }
 }

@@ -10,5 +10,5 @@ import org.koin.dsl.module
 val viewModelModule = module {
     viewModel { TokenizationVM(get() , get()) }
     viewModel { MainVM(get() , get()) }
-    viewModel { PreAuthVM(get()) }
+    viewModel { PreAuthVM(get() ,  get()) }
 }

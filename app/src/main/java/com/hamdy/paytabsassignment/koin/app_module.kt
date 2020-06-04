@@ -2,6 +2,7 @@ package com.hamdy.paytabsassignment.koin
 
 import com.hamdy.paytabsassignment.data.source.remote.ApiServiceFactory
 import com.hamdy.paytabsassignment.data.source.remote.ContextProviders
+import com.hamdy.paytabsassignment.features.payment_checkout.pre_auth.TransactionPref
 import com.hamdy.paytabsassignment.features.payment_checkout.tokenization.TokenizationPref
 import com.hamdy.paytabsassignment.network.ApiService
 import com.hamdy.paytabsassignment.network.AppAPIConfig
@@ -14,11 +15,8 @@ val appModule: Module = module {
 
     single { ApiServiceFactory.getService<ApiService>( AppAPIConfig()) }//ApiService
     single { ContextProviders.getInstance() }//ContextProvidersd
-    factory {
-        TokenizationPref(
-            get()
-        )
-    }//ApiService
+    factory { TokenizationPref(get()) }
+    factory { TransactionPref(get()) }
 
 
 

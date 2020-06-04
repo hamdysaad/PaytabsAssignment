@@ -131,6 +131,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             Log.e("Tag", CUSTOMER_PASSWORD ?: "")
 
             vm.saveTokenDetails(TOKEN , CUSTOMER_EMAIL , CUSTOMER_PASSWORD)
+            vm.saveTransactionId(TRANSACTION_ID)
 
             PaymentResultActivity.openPaymentResultActivity(this , data)
         }
